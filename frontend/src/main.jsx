@@ -10,7 +10,7 @@ const routes = (
   <Routes>
     <Route path='/admin' element={<Layout/>}>
        <Route index element={<Admin/>}/>
-       <Route path='user' element={<Users/>} />
+       <Route path='users' element={<Users/>} />
     </Route>
   </Routes>
 )

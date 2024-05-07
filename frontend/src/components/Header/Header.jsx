@@ -1,5 +1,4 @@
 import React from 'react';
-import Admin from '../Admin/Admin';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Header = () => {
@@ -19,16 +18,32 @@ const Header = () => {
         <aside className="bg-zinc-800 w-1/4">
                 <nav className="p-4">
                   <ul>
+                    <NavLink
+                    to={''}
+                    >
                     <li className="py-2 px-4 hover:bg-zinc-700">Dashboard</li>
+                    </NavLink>
+                    <NavLink
+                    to={'users'}
+                    >
                     <li className="py-2 px-4 hover:bg-zinc-700">Users</li>
+                    </NavLink>
+                    <NavLink
+                    to={''}
+                    >
                     <li className="py-2 px-4 hover:bg-zinc-700">Orders</li>
+                    </NavLink>
+                    <NavLink
+                    to={''}
+                    >
                     <li className="py-2 px-4 hover:bg-zinc-700">Settings</li>
+                    </NavLink>
                   </ul>
                 </nav>
         </aside>
        
         <div>
-          <Admin/>
+          <Outlet/>
         </div>
         
     </div>

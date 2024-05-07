@@ -6,11 +6,8 @@ const Header = () => {
     <>
     <div className="w-full">
         <header className="bg-zinc-800 p-4">
-          <h1 className="text-2xl">Admin Dashboard</h1>
+          <h1 className="text-3xl font-semibold">Admin Dashboard</h1>
         </header>
-        <main className="">
-          
-        </main>
     </div>
 
     <div className="flex bg-zinc-900 text-white min-h-screen">
@@ -24,25 +21,25 @@ const Header = () => {
                     <li className="py-2 px-4 hover:bg-zinc-700">Dashboard</li>
                     </NavLink>
                     <NavLink
-                    to={'users'}
+                    to={'customer'}
                     >
-                    <li className="py-2 px-4 hover:bg-zinc-700">Users</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Customer</li>
                     </NavLink>
                     <NavLink
-                    to={''}
+                    to={'purchase'}
                     >
-                    <li className="py-2 px-4 hover:bg-zinc-700">Orders</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Purchase</li>
                     </NavLink>
                     <NavLink
-                    to={''}
+                    to={'shipping'}
                     >
-                    <li className="py-2 px-4 hover:bg-zinc-700">Settings</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Shipping</li>
                     </NavLink>
                   </ul>
                 </nav>
         </aside>
        
-        <div>
+        <div className='p-16'>
           <Outlet/>
         </div>
         

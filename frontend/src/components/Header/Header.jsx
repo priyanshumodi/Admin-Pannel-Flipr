@@ -15,23 +15,22 @@ const Header = () => {
     </div>
 
     <div className="flex bg-zinc-900 text-white min-h-screen">
-      <div>
+        
+        <aside className="bg-zinc-800 w-1/4">
+                <nav className="p-4">
+                  <ul>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Dashboard</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Users</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Orders</li>
+                    <li className="py-2 px-4 hover:bg-zinc-700">Settings</li>
+                  </ul>
+                </nav>
+        </aside>
+       
         <div>
-            <aside className="bg-zinc-800 w-1/4">
-        <nav className="p-4">
-          <ul>
-            <li className="py-2 px-4 hover:bg-zinc-700">Dashboard</li>
-            <li className="py-2 px-4 hover:bg-zinc-700">Users</li>
-            <li className="py-2 px-4 hover:bg-zinc-700">Orders</li>
-            <li className="py-2 px-4 hover:bg-zinc-700">Settings</li>
-          </ul>
-        </nav>
-            </aside>
+          <Admin/>
         </div>
-        <div>
-            
-        </div>
-      </div>
+        
     </div>
 
     

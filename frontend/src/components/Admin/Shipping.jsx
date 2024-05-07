@@ -1,6 +1,8 @@
 import React from "react";
+import {useSelector} from "react-redux"
 
 function Shipping() {
+  const shippings = useSelector(state => state.shippingReducer.shippings)
     return (
         <div class="container mx-auto p-6 dark:bg-zinc-800">
         <table class="min-w-full bg-white dark:bg-zinc-900">
@@ -34,23 +36,25 @@ function Shipping() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            {shippings.map((shipping) => (
+              <tr key={shipping.Customer_ID}>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                Jane Smith
+                {shipping.Address}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                janesmith@example.com
+              {shipping.City}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                987-654-3210
+              {shipping.Pincode}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                Los Angeles
+              {shipping.Purchase_order_ID}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                CUST123
+              {shipping.Customer_ID}
               </td>
             </tr>
+            ))}
             
           </tbody>
         </table>

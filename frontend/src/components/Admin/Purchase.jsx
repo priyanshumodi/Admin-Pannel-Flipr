@@ -1,6 +1,7 @@
 import React from "react";
-
+import {useSelector} from "react-redux"
 function Purchase() {
+  const purchase = useSelector(state => state.purchaseReducer.purchase)
     return (
         <div class="container mx-auto p-6 dark:bg-zinc-800">
         <table class="min-w-full bg-white dark:bg-zinc-900">
@@ -39,26 +40,28 @@ function Purchase() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            {purchase.map((purchase) => (
+              <tr key={purchase.id}>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                Jane Smith
+                {purchase.productName}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                janesmith@example.com
+                {purchase.quantity}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                987-654-3210
+              {purchase.pricing}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                Los Angeles
+              {purchase.mrp}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                CUST123
+              {purchase.id}
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-                CUST124
+              {purchase.Customer_ID}
               </td>
             </tr>
+            ))}
             
           </tbody>
         </table>

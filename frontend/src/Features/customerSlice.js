@@ -8,7 +8,7 @@ const initialState = {
 }
 
 export const customerSlice = createSlice({
-    name:"customer",
+    name:"root",
     initialState,
     reducers: {
         

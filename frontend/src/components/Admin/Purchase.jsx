@@ -3,8 +3,13 @@ import {useSelector} from "react-redux"
 function Purchase() {
   const purchase = useSelector(state => state.purchaseReducer.purchase)
     return (
-        <div class="container mx-auto p-6 dark:bg-zinc-800">
-        <table class="min-w-full bg-white dark:bg-zinc-900">
+         <div className="flex flex-col text-center">
+         <div>
+         <button className="bg-blue-500 hover:bg-blue-700 text-wite font-bold py-2 px-4 rounded mb-4">Add Purchase</button>
+         </div>
+        <div>
+          <div class="container mx-auto p-6 dark:bg-zinc-800 flex shrink">
+        <table class="min-w-full bg-white dark:bg-zinc-900 ">
           <thead>
             <tr>
               <th
@@ -66,6 +71,8 @@ function Purchase() {
           </tbody>
         </table>
           </div>
+        </div>
+        </div>
     )
 }
 

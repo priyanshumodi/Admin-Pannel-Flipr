@@ -8,6 +8,15 @@ import Customer from './components/Admin/Customer.jsx';
 import Purchase from './components/Admin/Purchase.jsx'
 import Shipping from './components/Admin/Shipping.jsx'
 
+//redux
+import { Provider } from 'react-redux';
+import {store} from './app/store.js'
+
+// persist storage
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistor } from './app/store.js';
+
+
 const routes = (
   <Routes>
     <Route path='/admin' element={<Layout/>}>
@@ -20,7 +29,9 @@ const routes = (
   </Routes>
 )
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Router>{routes}</Router>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
+      <Router>{routes}</Router>
+    </PersistGate>
+  </Provider>,
 )

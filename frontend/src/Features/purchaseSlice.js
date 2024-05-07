@@ -2,7 +2,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit"
 
 const initialState = {
     purchase:[
-        {},
+        {id:"c124",productName:"laptop",quantity:"1",pricing:"70,000",mrp:"70,000",Customer_ID:"c123"},
         
     ],
 }
@@ -11,22 +11,10 @@ export const purchaseSlice = createSlice({
     name:"purchase",
     initialState,
     reducers: {
-        add: (state,action) => {
-            // // console.log(action.payload.name)
-            // const message = {
-            //     id : nanoid(),
-            //     name: action.payload.name,
-            //     email: action.payload.email,
-            //     subject: action.payload.subject,
-            //     message: action.payload.message,
-            // }
-            // // console.log(message)
-            // state.messages.push(message)
-            // state.messages.map((message) => console.log(message))
-        }
+        
     }
 })
 
-export const {add} = purchaseSlice.actions
+export const {} = purchaseSlice.actions
 
 export default purchaseSlice.reducer

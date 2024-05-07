@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 
 
 const Customer = () => {
-  const customers = useSelector((state) => state.customerReducer.customer);
-  const dispatch = useDispatch();
+  const customers = useSelector(state => state.customerReducer.customer);
+  console.log(customers)
+
+  
 
   useEffect(() => {
     // Fetch customers from API or initial data (optional)
   }, []);
 
-  const handleDelete = (customerId) => {
-    
-  };
+  
 
   return (
     <div class="container mx-auto p-6 dark:bg-zinc-800">
@@ -47,23 +47,26 @@ const Customer = () => {
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-          Jane Smith
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-          janesmith@example.com
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-          987-654-3210
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-          Los Angeles
-        </td>
-        <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
-          CUST123
-        </td>
-      </tr>
+      {customers.map((customer) => (
+          <tr key={customer.id}>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
+            {customer.customerName}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
+            {customer.email}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
+            {customer.mobile}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
+            {customer.city}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-200">
+            {customer.id}
+          </td>
+        </tr>
+      ))}
+      
       
     </tbody>
   </table>

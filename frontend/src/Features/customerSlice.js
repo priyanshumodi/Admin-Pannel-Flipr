@@ -2,7 +2,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit"
 
 const initialState = {
     customer:[
-        {},
+        {id:"c123",customerName:"Priyanshu Modi",email:"priyanshumodi944@gmail.com",mobile:"8461984408",city:"Dhar"},
         
     ],
 }
@@ -11,22 +11,10 @@ export const customerSlice = createSlice({
     name:"customer",
     initialState,
     reducers: {
-        add: (state,action) => {
-            // // console.log(action.payload.name)
-            // const message = {
-            //     id : nanoid(),
-            //     name: action.payload.name,
-            //     email: action.payload.email,
-            //     subject: action.payload.subject,
-            //     message: action.payload.message,
-            // }
-            // // console.log(message)
-            // state.messages.push(message)
-            // state.messages.map((message) => console.log(message))
-        }
+        
     }
 })
 
-export const {add} = customerSlice.actions
+export const {} = customerSlice.actions
 
 export default customerSlice.reducer
